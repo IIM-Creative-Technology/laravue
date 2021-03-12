@@ -24,6 +24,21 @@ Route::get('/', function () {
     ]);
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
+
+
+    // Route::get('/clients', [BlogController::class, "index"])->name('clients.index');
+
+    Route::get('/clients', function () {
+        return Inertia::render('Clients');
+    })->name('clients.index');
+    // Route::get('/projets', [BlogController::class, "index"])->name('projets.index');
+
+    Route::get('/projets', function () {
+        return Inertia::render('Projets');
+    })->name('projets.index');
+});
