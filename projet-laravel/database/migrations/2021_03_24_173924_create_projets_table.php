@@ -16,15 +16,16 @@ class CreateProjetsTable extends Migration
         Schema::create('projets', function (Blueprint $table) {
             $table->id();
             $table->string('name_responsable');
-            $table->string('prenom_responsable');
-            $table->string('tel_responsable', 10);
-            $table->string('email_responsable');
-            $table->string('title');
-            $table->string('description');
-            $table->string('date_debut');
-            $table->string('date_fin');
-            $table->string('etat');
-            $table->string('nombre_jours_vendus');
+            $table->text('prenom_responsable');
+            $table->text('tel_responsable');
+            //10
+            $table->text('email_responsable');
+            $table->text('title');
+            $table->text('description');
+            $table->date('date_debut');
+            $table->date('date_fin');
+            $table->text('etat');
+            $table->text('nombre_jours_vendus',3);
 
 
 

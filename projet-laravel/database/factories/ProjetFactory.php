@@ -22,7 +22,16 @@ class ProjetFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name_responsable'=>$this->faker->lastName(),
+            'prenom_responsable'=>$this->faker->firstName(),
+            'tel_responsable'=>$this->faker->numerify('0#########'),
+            'email_responsable'=>$this->faker->unique()->email,
+            'title'=>$this->faker->text(10),
+            'description'=>$this->faker->text(),
+            'date_debut'=>$this->faker->date(),
+            'date_fin'=>$this->faker->date(),
+            'etat'=>$this->faker->text(),
+            'nombre_jours_vendus'=>$this->faker->numerify()
         ];
     }
 }
