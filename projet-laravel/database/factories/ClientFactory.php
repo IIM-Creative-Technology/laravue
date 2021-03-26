@@ -21,19 +21,19 @@ class ClientFactory extends Factory
      */
     public function definition()
     {
-        $name = $this->faker->unique()->words(5, true);
+        $name = $this->faker->unique()->words(2, true);
         return [
             'name'=>$name,
             'description'=>$this->faker->text(30),
-            'raison_social'=>$this->faker->text(),
-            'statut_juridique'=>$this->faker->text(),
-            'capital'=>$this->faker->text(),
-            'numero_siret'=>$this->faker->text(),
-            'code_naf'=>$this->faker->text(),
-            'pays'=>$this->faker->text(),
-            'adresse'=>$this->faker->text(),
-            'code_postal'=>$this->faker->numerify('#####'),
-            'ville'=>$this->faker->text(),
+            'raison_social'=>$this->faker->unique()->company,
+            'statut_juridique'=>$this->faker->randomElement(['EI', 'EIRL', 'EURL','SARL', 'SA', 'SAS','SASU', 'SNC', 'SCOP','SCA', 'SCS']),
+            'capital'=>$this->faker->numberBetween(3000,100000),
+            'numero_siret'=>$this->faker->unique('##############')->numerify,
+            'code_naf'=>$this->faker->unique('#####')->numerify,
+            'pays'=>$this->faker->unique()->country,
+            'adresse'=>$this->faker->unique()->address,
+            'code_postal'=>$this->faker->unique('#####')->numerify,
+            'ville'=>$this->faker->unique()->city,
         ];
     }
 }

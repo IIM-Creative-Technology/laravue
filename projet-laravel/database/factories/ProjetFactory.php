@@ -21,17 +21,18 @@ class ProjetFactory extends Factory
      */
     public function definition()
     {
+        $title = $this->faker->unique()->words(2, true);
         return [
             'name_responsable'=>$this->faker->lastName(),
             'prenom_responsable'=>$this->faker->firstName(),
-            'tel_responsable'=>$this->faker->numerify('0#########'),
-            'email_responsable'=>$this->faker->unique()->email,
-            'title'=>$this->faker->text(10),
-            'description'=>$this->faker->text(),
-            'date_debut'=>$this->faker->date(),
+            'tel_responsable'=>$this->faker->phoneNumber,
+            'email_responsable'=>$this->faker->unique()->safeEmail,
+            'title'=>$title,
+            'description'=>$this->faker->text(200),
+            'date_debut'=>now(),
             'date_fin'=>$this->faker->date(),
-            'etat'=>$this->faker->text(),
-            'nombre_jours_vendus'=>$this->faker->numerify()
+            'etat'=>$this->faker->randomElement(['Terminé', 'En cours', 'Annulé']),
+            'nombre_jours_vendus'=>$this->faker->numberBetween(1,90)
         ];
     }
 }

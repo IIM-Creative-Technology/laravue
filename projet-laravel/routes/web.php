@@ -34,7 +34,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     // Route::get('/clients', [BlogController::class, "index"])->name('clients.index');
 
     Route::get('/clients', function () {
-        return Inertia::render('Clients');
+        return Inertia::render('BlogClients');
     })->name('clients.index');
     // Route::get('/projets', [BlogController::class, "index"])->name('projets.index');
 
