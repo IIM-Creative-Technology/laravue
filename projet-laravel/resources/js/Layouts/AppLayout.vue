@@ -23,17 +23,19 @@
                 >
                   Dashboard
                 </jet-nav-link>
-                <jet-nav-link
-                  :href="route('clients.index')"
-                  :active="route().current('clients.index')"
-                >
-                  Clients
-                </jet-nav-link>
+
                 <jet-nav-link
                   :href="route('projets.index')"
                   :active="route().current('projets.index')"
                 >
                   Projets
+                </jet-nav-link>
+
+                <jet-nav-link
+                  :href="route('clients.index')"
+                  :active="route().current('clients.index')"
+                >
+                  Clients
                 </jet-nav-link>
               </div>
             </div>
