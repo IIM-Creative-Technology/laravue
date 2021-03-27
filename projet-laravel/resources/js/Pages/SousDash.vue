@@ -148,7 +148,7 @@
 
     @media (prefers-color-scheme: dark) {
         .dark\:bg-gray-800 {
-            background-color: #2d3748;
+            background-color: #48352d;
             background-color: rgba(45, 55, 72, var(--tw-bg-opacity));
         }
 

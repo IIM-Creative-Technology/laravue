@@ -430,9 +430,9 @@ export default {
 </script>
 
 <style>
-/* .bg-white{
+.bg-white{
     background-color: #1F2937;
-} */
+}
 
 .hidden jet-nav-link{
     color: beige;
@@ -442,13 +442,74 @@ jet-nav-link :active {
 color:#b6800d ;
 }
 
-h-16::after{
+/* h-16::after{
     border-style: solid;
     border-width:12px;
     border-color: chartreuse;
-}
+} */
 
 nav::after {
     border-style: none;
 }
+
+.justify-between {
+    border-bottom-color: #878C98;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.border-b{
+    border-style: none;
+    border-bottom-width: 0px;
+    /* background-color: #1F2937; */
+}
+
+/* a:focus{
+background-color: brown;
+} */
+
+.border-b-2{
+    border-style: none;
+}
+
+a.inline-flex{
+    color: rgb(255, 255, 255);
+}
+
+a.inline-flex:hover{
+    background-color: rgb(3, 3, 19);
+    border-radius: 10px;
+    height: 50px;
+    margin-top: 8px;
+
+}
+
+.leading-tight{
+    color: cornsilk;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 10px 0 ;
+}
+
+.shadow{
+    /* background-color: darkgoldenrod; */
+    height: 250px;
+}
+
+
+
+.py-12{
+    margin-top: -200px;
+    z-index: 2;
+
+}
+
+.p-6{
+    background-color: white ;
+}
+
+.shadow-xl{
+    background-color: rgb(255, 255, 255);
+}
+
 </style>

@@ -56,6 +56,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     // Route::post('/projets', [BlogpController::class, "store"])->name('projets.store');
 
-    Route::get('/projets/{id}/toggle', [BlogpController::class, "toggle"])->name('projets.toggle');
+    // Route::get('/projets/{id}/toggle', [BlogpController::class, "toggle"])->name('projets.toggle');
 
 });
