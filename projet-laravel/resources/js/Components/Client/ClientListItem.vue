@@ -22,3 +22,9 @@ export default {
     props: ['client']
 }
 </script>
+
+<style>
+.divide-y-200 tr{
+    background-color: cyan;
+}
+</style>
