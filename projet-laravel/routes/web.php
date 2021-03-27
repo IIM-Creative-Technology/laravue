@@ -1,5 +1,6 @@
 <?php
 
+use GuzzleHttp\Promise\Create;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -30,11 +31,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
-        // Route::get('/clients', function () {
+    // Route::get('/clients', function () {
     //     return Inertia::render('Blogc');
     // })->name('clients.index');
 
     Route::get('/clients', [\App\Http\Controllers\BlogcController::class, "index"])->name('clients.index');
+    Route::get('/clients/create', [\App\Http\Controllers\BlogcController::class, "create"])->name('clients.create');
 
     // Route::get('/projets', function () {
     //     return Inertia::render('Blogp');
@@ -56,6 +58,5 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     // Route::post('/projets', [BlogpController::class, "store"])->name('projets.store');
 
-    // Route::get('/projets/{id}/toggle', [BlogpController::class, "toggle"])->name('projets.toggle');
-
+    Route::get('/projets/{id}/toggle', [BlogpController::class, "toggle"])->name('projets.toggle');
 });
