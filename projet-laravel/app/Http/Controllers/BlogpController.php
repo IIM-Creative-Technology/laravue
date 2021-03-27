@@ -12,4 +12,10 @@ class BlogpController extends Controller
             "projets" => Projet::all()
         ]);
     }
+
+    public function create() {
+        return Inertia::render('Projet/ProjetCreate');
+    }
+
+
 }

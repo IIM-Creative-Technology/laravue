@@ -12,6 +12,7 @@
               <div class="flex-shrink-0 flex items-center">
                 <inertia-link :href="route('dashboard')">
                   <jet-application-mark class="block h-9 w-auto" />
+
                 </inertia-link>
               </div>
 
@@ -427,3 +428,27 @@ export default {
   },
 };
 </script>
+
+<style>
+/* .bg-white{
+    background-color: #1F2937;
+} */
+
+.hidden jet-nav-link{
+    color: beige;
+}
+
+jet-nav-link :active {
+color:#b6800d ;
+}
+
+h-16::after{
+    border-style: solid;
+    border-width:12px;
+    border-color: chartreuse;
+}
+
+nav::after {
+    border-style: none;
+}
+</style>

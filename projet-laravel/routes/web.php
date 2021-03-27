@@ -41,6 +41,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     // })->name('projets.index');
 
     Route::get('/projets', [\App\Http\Controllers\BlogpController::class, "index"])->name('projets.index');
+    Route::get('/projets/create', [\App\Http\Controllers\BlogpController::class, "create"])->name('projets.create');
 
     // Route::get('/mon-url', function () {
     //     // return Inertia::render('Dashboard');
