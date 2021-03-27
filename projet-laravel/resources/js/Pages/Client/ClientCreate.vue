@@ -9,7 +9,7 @@
     <div class="py-12">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-          <client-form />
+          <client-form :errors="errors" />
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@ import AppLayout from "@/Layouts/AppLayout";
 import ClientForm from "@/Components/Client/ClientForm";
 
 export default {
-  props: ["clients"],
+  props: ["clients","errors"],
 
   components: {
     AppLayout,
