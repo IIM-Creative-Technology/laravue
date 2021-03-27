@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Client;
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use Illuminate\Support\Str;
 class ClientFactory extends Factory
 {
     /**
@@ -24,6 +24,7 @@ class ClientFactory extends Factory
         $name = $this->faker->unique()->words(2, true);
         return [
             'name'=>$name,
+            'slug'=> Str::slug($name),
             'description'=>$this->faker->text(30),
             'raison_social'=>$this->faker->unique()->company,
             'statut_juridique'=>$this->faker->randomElement(['EI', 'EIRL', 'EURL','SARL', 'SA', 'SAS','SASU', 'SNC', 'SCOP','SCA', 'SCS']),

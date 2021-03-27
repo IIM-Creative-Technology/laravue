@@ -18,7 +18,6 @@ class CreateProjetsTable extends Migration
             $table->string('name_responsable');
             $table->text('prenom_responsable');
             $table->text('tel_responsable');
-            //10
             $table->text('email_responsable');
             $table->text('title');
             $table->text('description');
@@ -26,10 +25,6 @@ class CreateProjetsTable extends Migration
             $table->date('date_fin');
             $table->text('etat');
             $table->text('nombre_jours_vendus',3);
-
-
-
-
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Projet;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class ProjetFactory extends Factory
 {
@@ -34,5 +35,6 @@ class ProjetFactory extends Factory
             'etat'=>$this->faker->randomElement(['Terminé', 'En cours', 'Annulé']),
             'nombre_jours_vendus'=>$this->faker->numberBetween(1,90)
         ];
+
     }
 }

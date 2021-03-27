@@ -30,15 +30,31 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
+        // Route::get('/clients', function () {
+    //     return Inertia::render('Blogc');
+    // })->name('clients.index');
 
-    // Route::get('/clients', [BlogController::class, "index"])->name('clients.index');
+    Route::get('/clients', [\App\Http\Controllers\BlogcController::class, "index"])->name('clients.index');
 
-    Route::get('/clients', function () {
-        return Inertia::render('BlogClients');
-    })->name('clients.index');
-    // Route::get('/projets', [BlogController::class, "index"])->name('projets.index');
+    // Route::get('/projets', function () {
+    //     return Inertia::render('Blogp');
+    // })->name('projets.index');
 
-    Route::get('/projets', function () {
-        return Inertia::render('Projets');
-    })->name('projets.index');
+    Route::get('/projets', [\App\Http\Controllers\BlogpController::class, "index"])->name('projets.index');
+
+    // Route::get('/mon-url', function () {
+    //     // return Inertia::render('Dashboard');
+    //     return redirect()->back();
+    // })->name('nom-de-ma-route');
+
+    // Route::get('/projets/{id}/edit', [BlogpController::class, "edit"])->name('projets.edit');
+
+    // Route::put('/projets/{id}', [BlogpController::class, "update"])->name('projets.update');
+
+    // Route::get('/projets/create', [BlogpController::class, "create"])->name('projets.create');
+
+    // Route::post('/projets', [BlogpController::class, "store"])->name('projets.store');
+
+    Route::get('/projets/{id}/toggle', [BlogpController::class, "toggle"])->name('projets.toggle');
+
 });
