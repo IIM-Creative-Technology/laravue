@@ -1,9 +1,16 @@
 <template>
     <app-layout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            <div class="top">
+                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Clients
-            </h2>
+                </h2>
+                <button class="button create">
+                    <a href="/clients/create">
+                    + Créer un client
+                    </a>
+                </button>
+            </div>
         </template>
 
         <div class="py-12">

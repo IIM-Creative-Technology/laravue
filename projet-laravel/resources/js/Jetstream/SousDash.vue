@@ -37,7 +37,7 @@
             </div>
 
             <div class="lien">
-            <a href="">Voir tous les clients</a>
+            <a href="/clients">Voir tous les clients</a>
             </div>
 
           </div>
@@ -63,7 +63,7 @@
                 </svg>
               </div>
               <div class="cote">
-                <p>Nombre de clients</p>
+                <p>Nombre de projets</p>
 
                 <div class="number">
                   <p class="total">14</p>
@@ -73,7 +73,7 @@
             </div>
 
             <div class="lien">
-                <a href="">Voir tous les projets</a>
+                <a href="/projets">Voir tous les projets</a>
             </div>
 
           </div>
@@ -120,13 +120,16 @@ export default {
   border-radius: 5px;
   width: 50px;
   height: 50px;
+  display: flex;
   /* text-align: center;
     justify-content: center; */
 }
 
-svg {
-  display: block;
-  margin: auto auto;
+.back-stat svg {
+  /* display: block; */
+  margin: auto;
+  /* background-color: #DC2626; */
+  text-align: center;
   /* padding-top: 2px; */
   /* text-align: center;
     justify-content: center; */

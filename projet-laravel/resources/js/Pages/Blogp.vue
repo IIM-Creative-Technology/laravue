@@ -1,9 +1,17 @@
 <template>
     <app-layout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            <div class="top">
+                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Projets
-            </h2>
+                </h2>
+                <button class="buttonn create">
+                    <a href="/projets/create">
+                    + Créer un projet
+                    </a>
+                </button>
+            </div>
+
         </template>
 
         <div class="py-12">
@@ -29,3 +37,24 @@
         },
     }
 </script>
+
+<style>
+.top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonn{
+    border-radius: 5px;
+    height: 40px;
+}
+
+.create{
+    background-color: #6366f1;
+}
+
+.buttonn a{
+    color: white;
+    padding: 0 10px;
+}
+</style>
