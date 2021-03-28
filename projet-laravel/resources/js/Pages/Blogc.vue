@@ -5,7 +5,7 @@
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Clients
                 </h2>
-                <button class="button create">
+                <button class="buttonn create">
                     <a href="/clients/create">
                     + Créer un client
                     </a>
@@ -36,3 +36,24 @@
         },
     }
 </script>
+
+<style>
+.top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonn{
+    border-radius: 5px;
+    height: 40px;
+}
+
+.create{
+    background-color: #6366f1;
+}
+
+.buttonn a{
+    color: white;
+    padding: 0 10px;
+}
+</style>
