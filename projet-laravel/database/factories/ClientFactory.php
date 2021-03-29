@@ -21,10 +21,10 @@ class ClientFactory extends Factory
      */
     public function definition()
     {
-        $name = $this->faker->unique()->words(2, true);
+        // $name = $this->faker->unique()->words(2, true);
         return [
-            'name'=>$name,
-            'slug'=> Str::slug($name),
+            // 'name'=>$name,
+            // 'slug'=> Str::slug($name),
             'description'=>$this->faker->text(30),
             'raison_social'=>$this->faker->unique()->company,
             'statut_juridique'=>$this->faker->randomElement(['EI', 'EIRL', 'EURL','SARL', 'SA', 'SAS','SASU', 'SNC', 'SCOP','SCA', 'SCS']),

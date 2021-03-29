@@ -24,6 +24,7 @@ class ProjetFactory extends Factory
     {
         $title = $this->faker->unique()->words(2, true);
         return [
+            'client'=>$this->faker->unique()->company,
             'name_responsable'=>$this->faker->lastName(),
             'prenom_responsable'=>$this->faker->firstName(),
             'tel_responsable'=>$this->faker->phoneNumber,

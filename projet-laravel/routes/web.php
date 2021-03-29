@@ -50,14 +50,17 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     //     return redirect()->back();
     // })->name('nom-de-ma-route');
 
-    // Route::get('/projets/{id}/edit', [BlogpController::class, "edit"])->name('projets.edit');
+    Route::get('/projets/{id}/edit', [\App\Http\Controllers\BlogpController::class, "edit"])->name('projets.edit');
+    Route::get('/clients/{id}/edit', [\App\Http\Controllers\BlogcController::class, "edit"])->name('clients.edit');
 
+    Route::put('/projets/{id}', [\App\Http\Controllers\BlogpController::class, "update"])->name('projets.update');
+    Route::put('/clients/{id}', [\App\Http\Controllers\BlogcController::class, "update"])->name('clients.update');
     // Route::put('/projets/{id}', [BlogpController::class, "update"])->name('projets.update');
 
     // Route::get('/projets/create', [BlogpController::class, "create"])->name('projets.create');
 
-     Route::post('/projets', [BlogpController::class, "store"])->name('projets.store');
-     Route::post('/clients', [BlogcController::class, "store"])->name('clients.store');
+     Route::post('/projets', [\App\Http\Controllers\BlogpController::class, "store"])->name('projets.store');
+     Route::post('/clients', [\App\Http\Controllers\BlogcController::class, "store"])->name('clients.store');
 
     Route::get('/projets/{id}/toggle', [BlogpController::class, "toggle"])->name('projets.toggle');
 });

@@ -16,9 +16,9 @@
 </template>
 
 <script>
-// import ClientListItem from "@/Components/Client/ClientListItem";
+
 export default {
-    // components: {ClientListItem},
+
     props: ['client']
 }
 </script>

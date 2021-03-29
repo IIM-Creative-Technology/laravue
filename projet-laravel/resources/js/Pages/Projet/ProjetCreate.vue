@@ -21,7 +21,7 @@ import AppLayout from "@/Layouts/AppLayout";
 import ProjetForm from "@/Components/Projet/ProjetForm";
 
 export default {
-  props: ["projets", "errors"],
+  props: ["errors"],
 
   components: {
     AppLayout,

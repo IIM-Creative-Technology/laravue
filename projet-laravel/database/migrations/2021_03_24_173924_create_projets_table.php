@@ -15,6 +15,7 @@ class CreateProjetsTable extends Migration
     {
         Schema::create('projets', function (Blueprint $table) {
             $table->id();
+            $table->string('client');
             $table->string('name_responsable');
             $table->text('prenom_responsable');
             $table->text('tel_responsable');

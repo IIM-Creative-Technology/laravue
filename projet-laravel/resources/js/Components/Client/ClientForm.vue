@@ -7,43 +7,56 @@
         <div class="espace_form">
             <div class="label"><label for="">Description</label>
             </div>
+             <div class="input_error">
             <input type="text" name="description" v-model="form.description"/><br />
 <div v-if="errors.description">{{errors.description }}</div>
+             </div>
         </div>
 
                 <div class="espace_form">
             <div class="label">
       <label for="">Raison Social</label></div>
-      <input type="text" name="raison_social" v-model="raison_social" /> <br />
+
+      <div class="input_error">
+      <input type="text" name="raison_social" v-model="form.raison_social" /> <br />
       <div v-if="errors.raison_social">{{errors.raison_social }}</div>
+      </div>
                 </div>
 
               <div class="espace_form">
             <div class="label">
       <label for="">Statut Juridique</label></div>
-      <input type="text" name="statut_juridique" v-model="statut_juridique"/> <br />
+       <div class="input_error">
+      <input type="text" name="statut_juridique" v-model="form.statut_juridique"/> <br />
       <div v-if="errors.statut_juridique">{{errors.statut_juridique }}</div>
+       </div>
               </div>
 
               <div class="espace_form">
             <div class="label">
       <label for="">Capital</label></div>
-      <input type="text" name="capital" v-model="capital" /> <br />
+       <div class="input_error">
+      <input type="text" name="capital" v-model="form.capital" /> <br />
       <div v-if="errors.capital">{{errors.capital }}</div>
+       </div>
               </div>
 
               <div class="espace_form">
             <div class="label">
       <label for="">Numéro Siret</label></div>
-      <input type="text" name="numero_siret" v-model="numero_siret" /> <br />
+       <div class="input_error">
+      <input type="text" name="numero_siret" v-model="form.numero_siret" /> <br />
       <div v-if="errors.numero_siret">{{errors.numero_siret }}</div>
+              </div>
               </div>
 
               <div class="espace_form">
             <div class="label">
       <label for="">Code Naf (APE)</label></div>
-      <input type="text" name="code_naf" v-model="code_naf" /> <br />
+       <div class="input_error">
+      <input type="text" name="code_naf" v-model="form.code_naf" /> <br />
       <div v-if="errors.code_naf">{{errors.code_naf }}</div>
+              </div>
               </div>
 
       <h2 class="heading">Adresse</h2>
@@ -52,30 +65,38 @@
         <div class="espace_form">
             <div class="label">
       <label for="">Pays</label></div>
-      <input type="text" name="pays" v-model="pays"/> <br />
+       <div class="input_error">
+      <input type="text" name="pays" v-model="form.pays"/> <br />
       <div v-if="errors.pays">{{errors.pays }}</div>
             </div>
+        </div>
 
         <div class="espace_form">
             <div class="label">
       <label for="">Adresse</label></div>
-      <input type="text" name="adresse" v-model="adresse" /> <br />
+       <div class="input_error">
+      <input type="text" name="adresse" v-model="form.adresse" /> <br />
       <div v-if="errors.address">{{errors.address }}</div>
+        </div>
         </div>
 
               <div class="espace_form">
             <div class="label">
       <label for="">Code Postal</label></div>
-      <input type="text" name="code_postal" v-model="code_postal"/>
+       <div class="input_error">
+      <input type="text" name="code_postal" v-model="form.code_postal"/>
       <br />
       <div v-if="errors.code_postal">{{errors.code_postal }}</div>
+              </div>
               </div>
 
               <div class="espace_form">
             <div class="label">
       <label for="">Ville</label></div>
-      <input type="text" name="ville" v-model="ville" /> <br />
+       <div class="input_error">
+      <input type="text" name="ville" v-model="form.ville" /> <br />
       <div v-if="errors.ville">{{errors.ville }}</div>
+              </div>
               </div>
 
       <div class="end_button">
@@ -88,26 +109,30 @@
 </template>
 <script>
 export default {
-     props: ["errors"],
+     props: ["errors", "client"],
   data() {
     return {
       form: this.$inertia.form({
-        description: "",
-        raison_social: "",
-        statut_juridique: "",
-        capital: "",
-        numero_siret: "",
-        code_naf: "",
-        pays: "",
-        adresse: "",
-        code_postal: "",
-        ville: "",
+        description: this.client ? this.client.description :'',
+        raison_social: this.client ? this.client.raison_social :'',
+        statut_juridique: this.client ? this.client.statut_juridique :'',
+        capital: this.client ? this.client.capital :'',
+        numero_siret: this.client ? this.client.numero_siret :'',
+        code_naf: this.client ? this.client.code_naf :'',
+        pays: this.client ? this.client.pays :'',
+        adresse: this.client ? this.client.adresse :'',
+        code_postal: this.client ? this.client.code_postal :'',
+        ville: this.client ? this.client.ville :'',
       }),
     };
   },
   methods: {
     submitForm() {
-      this.$inertia.post(this.route("clients.store"), this.form);
+            if (this.post) {
+                this.$inertia.put(this.route('clients.update', this.post.id), this.form);
+            } else {
+                this.$inertia.post(this.route('clients.store'), this.form);
+            }
     },
   },
 };
@@ -170,7 +195,13 @@ export default {
     text-align: end;
     width: 100%;
 }
+
 .end_button button:first-child{
     margin-right: 10px ;
+}
+
+.input_error{
+    display: flex;
+    flex-flow: column;
 }
 </style>
